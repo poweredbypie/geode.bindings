@@ -2859,10 +2859,10 @@ class cocos2d::CCPageTurn3D : cocos2d::CCGrid3DAction {
 
 [[link(win, android)]]
 class cocos2d::CCParallaxNode : cocos2d::CCNode {
-    CCParallaxNode();
-    virtual ~CCParallaxNode();
+    CCParallaxNode() = m1 0x4108a0, imac 0x4ae6f0;
+    virtual ~CCParallaxNode() = m1 0x4109c8, imac 0x4ae7f0;
 
-    static cocos2d::CCParallaxNode* create();
+    static cocos2d::CCParallaxNode* create() = m1 0x410a98, imac 0x4ae8e0;
 
     virtual void addChild(cocos2d::CCNode*, unsigned int, cocos2d::CCPoint const&, cocos2d::CCPoint const&) = imac 0x4ae9b0, m1 0x410b48;
     virtual void addChild(cocos2d::CCNode*, unsigned int, int) = imac 0x4ae9a0, m1 0x410b44;
@@ -2870,7 +2870,7 @@ class cocos2d::CCParallaxNode : cocos2d::CCNode {
     virtual void removeAllChildrenWithCleanup(bool) = imac 0x4aebf0, m1 0x410d88;
     virtual void visit() = imac 0x4aecb0, m1 0x410e50;
 
-    cocos2d::CCPoint absolutePosition();
+    cocos2d::CCPoint absolutePosition() = m1 0x410db8, imac 0x4aec20;
 }
 
 [[link(win, android)]]
@@ -4481,22 +4481,22 @@ class cocos2d::CCTiledGrid3DAction : cocos2d::CCGridAction {
 
 [[link(win, android)]]
 class cocos2d::CCTileMapAtlas : cocos2d::CCAtlasNode {
-    CCTileMapAtlas() = imac 0x22c9b0, m1 0x1d6274;
+    CCTileMapAtlas() = imac 0x22cd70, m1 0x1d674c;
     virtual ~CCTileMapAtlas() = imac 0x22cdc0, m1 0x1d6784;
 
-    static cocos2d::CCTileMapAtlas* create(char const*, char const*, int, int);
+    static cocos2d::CCTileMapAtlas* create(char const*, char const*, int, int) = m1 0x1d61a0, imac 0x22c8f0;
 
     virtual cocos2d::sImageTGA* getTGAInfo() = imac 0x22d640, m1 0x1d6ed0;
     virtual void setTGAInfo(cocos2d::sImageTGA*) = imac 0x22d630, m1 0x1d6ec8;
     virtual void updateAtlasValues() = imac 0x22d400, m1 0x1d6c8c;
 
-    void calculateItemsToRender();
-    bool initWithTileFile(char const*, char const*, int, int);
-    void loadTGAfile(char const*);
-    void releaseMap();
-    void setTile(cocos2d::ccColor3B const&, cocos2d::CCPoint const&);
-    cocos2d::ccColor3B tileAt(cocos2d::CCPoint const&);
-    void updateAtlasValueAt(cocos2d::CCPoint const&, cocos2d::ccColor3B const&, unsigned int);
+    void calculateItemsToRender() = m1 0x1d6604, imac 0x22cc80;
+    bool initWithTileFile(char const*, char const*, int, int) = m1 0x1d62ac, imac 0x22ca00;
+    void loadTGAfile(char const*) = m1 0x1d655c, imac 0x22cc00;
+    void releaseMap() = m1 0x1d6890, imac 0x22cf10;
+    void setTile(cocos2d::ccColor3B const&, cocos2d::CCPoint const&) = m1 0x1d68cc, imac 0x22cf60;
+    cocos2d::ccColor3B tileAt(cocos2d::CCPoint const&) = m1 0x1d6c54, imac 0x22d3c0;
+    void updateAtlasValueAt(cocos2d::CCPoint const&, cocos2d::ccColor3B const&, unsigned int) = m1 0x1d6a3c, imac 0x22d0d0;
 }
 
 [[link(win, android)]]
@@ -4550,10 +4550,10 @@ class cocos2d::CCTintTo : cocos2d::CCActionInterval {
 
 [[link(win, android)]]
 class cocos2d::CCTMXLayer : cocos2d::CCSpriteBatchNode {
-    CCTMXLayer() = imac 0x259a00, m1 0x1fec04;
+    CCTMXLayer() = imac 0x259e20, m1 0x1fef98;
     virtual ~CCTMXLayer() = imac 0x259eb0, m1 0x1ff018;
 
-    static cocos2d::CCTMXLayer* create(cocos2d::CCTMXTilesetInfo*, cocos2d::CCTMXLayerInfo*, cocos2d::CCTMXMapInfo*);
+    static cocos2d::CCTMXLayer* create(cocos2d::CCTMXTilesetInfo*, cocos2d::CCTMXLayerInfo*, cocos2d::CCTMXMapInfo*) = m1 0x1feb28, imac 0x259910;
 
     virtual cocos2d::CCTMXTilesetInfo* getTileSet() = imac 0x259fa0, m1 0x1ff0cc;
     virtual void setTileSet(cocos2d::CCTMXTilesetInfo*) = imac 0x259fb0, m1 0x1ff0d4;
@@ -4562,30 +4562,30 @@ class cocos2d::CCTMXLayer : cocos2d::CCSpriteBatchNode {
     virtual void addChild(cocos2d::CCNode*, int, int) = imac 0x25b730, m1 0x200638;
     virtual void removeChild(cocos2d::CCNode*, bool) = imac 0x25b740, m1 0x20063c;
 
-    cocos2d::CCSprite* appendTileForGID(unsigned int, cocos2d::CCPoint const&);
-    unsigned int atlasIndexForExistantZ(unsigned int);
-    unsigned int atlasIndexForNewZ(int);
-    cocos2d::CCPoint calculateLayerOffset(cocos2d::CCPoint const&);
-    bool initWithTilesetInfo(cocos2d::CCTMXTilesetInfo*, cocos2d::CCTMXLayerInfo*, cocos2d::CCTMXMapInfo*);
-    cocos2d::CCSprite* insertTileForGID(unsigned int, cocos2d::CCPoint const&);
-    void parseInternalProperties();
-    cocos2d::CCPoint positionAt(cocos2d::CCPoint const&);
-    cocos2d::CCPoint positionForHexAt(cocos2d::CCPoint const&);
-    cocos2d::CCPoint positionForIsoAt(cocos2d::CCPoint const&);
-    cocos2d::CCPoint positionForOrthoAt(cocos2d::CCPoint const&);
-    cocos2d::CCString* propertyNamed(char const*);
-    void releaseMap();
-    void removeTileAt(cocos2d::CCPoint const&);
-    cocos2d::CCSprite* reusedTileWithRect(cocos2d::CCRect);
-    void setTileGID(unsigned int, cocos2d::CCPoint const&);
-    void setTileGID(unsigned int, cocos2d::CCPoint const&, cocos2d::ccTMXTileFlags);
-    void setupTiles();
-    void setupTileSprite(cocos2d::CCSprite*, cocos2d::CCPoint, unsigned int);
-    cocos2d::CCSprite* tileAt(cocos2d::CCPoint const&);
-    unsigned int tileGIDAt(cocos2d::CCPoint const&);
-    unsigned int tileGIDAt(cocos2d::CCPoint const&, cocos2d::ccTMXTileFlags*);
-    cocos2d::CCSprite* updateTileForGID(unsigned int, cocos2d::CCPoint const&);
-    int vertexZForPos(cocos2d::CCPoint const&);
+    cocos2d::CCSprite* appendTileForGID(unsigned int, cocos2d::CCPoint const&) = m1 0x1ff524, imac 0x25a4a0;
+    unsigned int atlasIndexForExistantZ(unsigned int) = m1 0x1fff48, imac 0x25afa0;
+    unsigned int atlasIndexForNewZ(int) = m1 0x200194, imac 0x25b240;
+    cocos2d::CCPoint calculateLayerOffset(cocos2d::CCPoint const&) = m1 0x1feec4, imac 0x259d40;
+    bool initWithTilesetInfo(cocos2d::CCTMXTilesetInfo*, cocos2d::CCTMXLayerInfo*, cocos2d::CCTMXMapInfo*) = m1 0x1fec84, imac 0x259a90;
+    cocos2d::CCSprite* insertTileForGID(unsigned int, cocos2d::CCPoint const&) = m1 0x1fffcc, imac 0x25b030;
+    void parseInternalProperties() = m1 0x1ff3fc, imac 0x25a390;
+    cocos2d::CCPoint positionAt(cocos2d::CCPoint const&) = m1 0x1ffa08, imac 0x25a9b0;
+    cocos2d::CCPoint positionForHexAt(cocos2d::CCPoint const&) = m1 0x200728, imac 0x25b880;
+    cocos2d::CCPoint positionForIsoAt(cocos2d::CCPoint const&) = m1 0x2006d4, imac 0x25b800;
+    cocos2d::CCPoint positionForOrthoAt(cocos2d::CCPoint const&) = m1 0x2006a8, imac 0x25b7b0;
+    cocos2d::CCString* propertyNamed(char const*) = m1 0x1ff654, imac 0x25a620;
+    void releaseMap() = m1 0x1ff110, imac 0x259ff0;
+    void removeTileAt(cocos2d::CCPoint const&) = m1 0x20050c, imac 0x25b5f0;
+    cocos2d::CCSprite* reusedTileWithRect(cocos2d::CCRect) = m1 0x1ffbf0, imac 0x25ac00;
+    void setTileGID(unsigned int, cocos2d::CCPoint const&) = m1 0x20030c, imac 0x25b3d0;
+    void setTileGID(unsigned int, cocos2d::CCPoint const&, cocos2d::ccTMXTileFlags) = m1 0x200314, imac 0x25b3e0;
+    void setupTiles() = m1 0x1ff14c, imac 0x25a040;
+    void setupTileSprite(cocos2d::CCSprite*, cocos2d::CCPoint, unsigned int) = m1 0x1ff758, imac 0x25a700;
+    cocos2d::CCSprite* tileAt(cocos2d::CCPoint const&) = m1 0x1ffcbc, imac 0x25acc0;
+    unsigned int tileGIDAt(cocos2d::CCPoint const&) = m1 0x1fff28, imac 0x25af70;
+    unsigned int tileGIDAt(cocos2d::CCPoint const&, cocos2d::ccTMXTileFlags*) = m1 0x1fffa0, imac 0x25aff0;
+    cocos2d::CCSprite* updateTileForGID(unsigned int, cocos2d::CCPoint const&) = m1 0x2001d0, imac 0x25b280;
+    int vertexZForPos(cocos2d::CCPoint const&) = m1 0x1ffb80, imac 0x25ab80;
 }
 
 [[link(win, android)]]
@@ -4599,11 +4599,11 @@ class cocos2d::CCTMXLayerInfo : cocos2d::CCObject {
 
 [[link(win, android)]]
 class cocos2d::CCTMXMapInfo : cocos2d::CCObject, cocos2d::CCSAXDelegator {
-    CCTMXMapInfo() = imac 0x4cd300, m1 0x42bfec;
+    CCTMXMapInfo() = imac 0x4cd7f0, m1 0x42c4c0;
     virtual ~CCTMXMapInfo() = imac 0x4cd890, m1 0x42c550;
 
-    static cocos2d::CCTMXMapInfo* formatWithTMXFile(char const*);
-    static cocos2d::CCTMXMapInfo* formatWithXML(char const*, char const*);
+    static cocos2d::CCTMXMapInfo* formatWithTMXFile(char const*) = m1 0x42bed4, imac 0x4cd1d0;
+    static cocos2d::CCTMXMapInfo* formatWithXML(char const*, char const*) = m1 0x42c0c4, imac 0x4cd3e0;
 
     virtual cocos2d::CCArray* getLayers() = imac 0x4cd9a0, m1 0x42c62c;
     virtual void setLayers(cocos2d::CCArray*) = imac 0x4cd9b0, m1 0x42c634;
@@ -4617,13 +4617,13 @@ class cocos2d::CCTMXMapInfo : cocos2d::CCObject, cocos2d::CCSAXDelegator {
     virtual void endElement(void*, char const*) = imac 0x4d0cd0, m1 0x42f0d4;
     virtual void textHandler(void*, char const*, int) = imac 0x4d1110, m1 0x42f54c;
 
-    cocos2d::CCDictionary* getTileProperties();
-    bool initWithTMXFile(char const*);
-    bool initWithXML(char const*, char const*);
-    void internalInit(char const*, char const*);
-    bool parseXMLFile(char const*);
-    bool parseXMLString(char const*);
-    void setTileProperties(cocos2d::CCDictionary*);
+    cocos2d::CCDictionary* getTileProperties() = m1 0x42c73c, imac 0x4cdae0;
+    bool initWithTMXFile(char const*) = m1 0x42c07c, imac 0x4cd3a0;
+    bool initWithXML(char const*, char const*) = m1 0x42c1d4, imac 0x4cd4f0;
+    void internalInit(char const*, char const*) = m1 0x42c204, imac 0x4cd520;
+    bool parseXMLFile(char const*) = m1 0x42c3d4, imac 0x4cd710;
+    bool parseXMLString(char const*) = m1 0x42c324, imac 0x4cd660;
+    void setTileProperties(cocos2d::CCDictionary*) = m1 0x42c744, imac 0x4cdaf0;
 }
 
 [[link(win, android)]]
@@ -4636,40 +4636,40 @@ class cocos2d::CCTMXObjectGroup : cocos2d::CCObject {
     virtual cocos2d::CCArray* getObjects() = imac 0x49cbd0, m1 0x400e60;
     virtual void setObjects(cocos2d::CCArray*) = imac 0x49cbe0, m1 0x400e68;
 
-    cocos2d::CCDictionary* objectNamed(char const*);
-    cocos2d::CCString* propertyNamed(char const*);
+    cocos2d::CCDictionary* objectNamed(char const*) = m1 0x400bcc, imac 0x49c960;
+    cocos2d::CCString* propertyNamed(char const*) = m1 0x400d18, imac 0x49caa0;
 }
 
 [[link(win, android)]]
 class cocos2d::CCTMXTiledMap : cocos2d::CCNode {
-    CCTMXTiledMap() = imac 0x518310, m1 0x46ea70;
+    CCTMXTiledMap() = imac 0x518700, m1 0x46ee50;
     virtual ~CCTMXTiledMap() = imac 0x518770, m1 0x46eebc;
 
-    static cocos2d::CCTMXTiledMap* create(char const*);
-    static cocos2d::CCTMXTiledMap* createWithXML(char const*, char const*);
+    static cocos2d::CCTMXTiledMap* create(char const*) = m1 0x46e970, imac 0x518210;
+    static cocos2d::CCTMXTiledMap* createWithXML(char const*, char const*) = m1 0x46eb48, imac 0x5183e0;
 
     virtual cocos2d::CCArray* getObjectGroups() = imac 0x5188a0, m1 0x46efbc;
     virtual void setObjectGroups(cocos2d::CCArray*) = imac 0x5188b0, m1 0x46efc4;
     virtual cocos2d::CCDictionary* getProperties() = imac 0x5188f0, m1 0x46f000;
     virtual void setProperties(cocos2d::CCDictionary*) = imac 0x518900, m1 0x46f008;
 
-    void buildWithMapInfo(cocos2d::CCTMXMapInfo*);
-    bool initWithTMXFile(char const*);
-    bool initWithXML(char const*, char const*);
-    cocos2d::CCTMXLayer* layerNamed(char const*);
-    cocos2d::CCTMXObjectGroup* objectGroupNamed(char const*);
-    cocos2d::CCTMXLayer* parseLayer(cocos2d::CCTMXLayerInfo*, cocos2d::CCTMXMapInfo*);
-    cocos2d::CCDictionary* propertiesForGID(int);
-    cocos2d::CCString* propertyNamed(char const*);
-    cocos2d::CCTMXTilesetInfo* tilesetForLayer(cocos2d::CCTMXLayerInfo*, cocos2d::CCTMXMapInfo*);
+    void buildWithMapInfo(cocos2d::CCTMXMapInfo*) = m1 0x46eca0, imac 0x518530;
+    bool initWithTMXFile(char const*) = m1 0x46eadc, imac 0x518380;
+    bool initWithXML(char const*, char const*) = m1 0x46ec30, imac 0x5184d0;
+    cocos2d::CCTMXLayer* layerNamed(char const*) = m1 0x46f280, imac 0x518ba0;
+    cocos2d::CCTMXObjectGroup* objectGroupNamed(char const*) = m1 0x46f334, imac 0x518c70;
+    cocos2d::CCTMXLayer* parseLayer(cocos2d::CCTMXLayerInfo*, cocos2d::CCTMXMapInfo*) = m1 0x46f044, imac 0x518940;
+    cocos2d::CCDictionary* propertiesForGID(int) = m1 0x46f65c, imac 0x518fb0;
+    cocos2d::CCString* propertyNamed(char const*) = m1 0x46f558, imac 0x518ed0;
+    cocos2d::CCTMXTilesetInfo* tilesetForLayer(cocos2d::CCTMXLayerInfo*, cocos2d::CCTMXMapInfo*) = m1 0x46f170, imac 0x518a80;
 }
 
 [[link(win, android)]]
 class cocos2d::CCTMXTilesetInfo : cocos2d::CCObject {
-    CCTMXTilesetInfo();
-    virtual ~CCTMXTilesetInfo();
+    CCTMXTilesetInfo() = m1 0x42bc28, imac 0x4ccf60;
+    virtual ~CCTMXTilesetInfo() = m1 0x42bd00, imac 0x4cd040;
 
-    cocos2d::CCRect rectForGID(unsigned int);
+    cocos2d::CCRect rectForGID(unsigned int) = m1 0x42be34, imac 0x4cd110;
 }
 
 [[link(win, android)]]
