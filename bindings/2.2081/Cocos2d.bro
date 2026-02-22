@@ -605,21 +605,21 @@ class cocos2d::CCCallFuncO : cocos2d::CCCallFunc, cocos2d::TypeInfo {
 [[link(win, android)]]
 class cocos2d::CCCamera : cocos2d::CCObject {
     // private CCCamera(cocos2d::CCCamera const&);
-    CCCamera();
-    virtual ~CCCamera();
+    CCCamera() = m1 0x4b50c8, imac 0x566570, ios 0x19e470;
+    virtual ~CCCamera() = m1 0x4b5138, imac 0x5665d0, ios inline;
 
-    static float getZEye();
+    static float getZEye() = m1 0x4b51dc, imac 0x566690, ios inline;
 
-    char const* description();
-    void getCenterXYZ(float*, float*, float*);
-    void getEyeXYZ(float*, float*, float*);
-    void getUpXYZ(float*, float*, float*);
-    void init();
-    void locate();
-    void restore();
-    void setCenterXYZ(float, float, float);
-    void setEyeXYZ(float, float, float);
-    void setUpXYZ(float, float, float);
+    char const* description() = m1 0x4b5154, imac 0x566610, ios inline;
+    void getCenterXYZ(float*, float*, float*) = m1 0x4b52bc, imac 0x5667e0, ios inline;
+    void getEyeXYZ(float*, float*, float*) = m1 0x4b52a0, imac 0x5667b0, ios inline;
+    void getUpXYZ(float*, float*, float*) = m1 0x4b52d8, imac 0x566810, ios inline;
+    void init() = m1 0x4b5080, imac 0x566530, ios inline;
+    void locate() = m1 0x4b51e4, imac 0x5666a0, ios 0x19e544;
+    void restore() = m1 0x4b5194, imac 0x566650, ios 0x19e4fc;
+    void setCenterXYZ(float, float, float) = m1 0x4b5278, imac 0x566770, ios inline;
+    void setEyeXYZ(float, float, float) = m1 0x4b5264, imac 0x566750, ios inline;
+    void setUpXYZ(float, float, float) = m1 0x4b528c, imac 0x566790, ios inline;
 }
 
 [[link(win, android)]]
@@ -726,31 +726,31 @@ class cocos2d::CCComponentContainer {
 
 [[link(win, android)]]
 class cocos2d::CCConfiguration : cocos2d::CCObject {
-    CCConfiguration();
+    CCConfiguration() = m1 0x46f6cc, imac 0x519030, ios inline;
     // CCConfiguration(cocos2d::CCConfiguration const&);
-    virtual ~CCConfiguration();
+    virtual ~CCConfiguration() = m1 0x46f9dc, imac 0x519350, ios 0x32491c;
 
-    static void purgeConfiguration();
+    static void purgeConfiguration() = m1 0x470478, imac 0x519d40, ios 0x324fec;
     static cocos2d::CCConfiguration* sharedConfiguration() = imac 0x519cb0, m1 0x4703f8, ios 0x324f78;
 
     bool checkForGLExtension(gd::string const&) const = imac 0x519c80, m1 0x4703c4, ios 0x324f44;
-    void dumpInfo() const;
-    void gatherGPUInfo();
-    bool getBool(char const*, bool) const;
-    char const* getCString(char const*, char const*) const;
-    int getMaxModelviewStackDepth() const;
-    int getMaxTextureSize() const;
-    int getMaxTextureUnits() const;
-    double getNumber(char const*, double) const;
-    cocos2d::CCObject* getObject(char const*) const;
-    bool init();
-    void loadConfigFile(char const*);
-    void setObject(char const*, cocos2d::CCObject*);
-    bool supportsBGRA8888() const;
-    bool supportsDiscardFramebuffer() const;
-    bool supportsNPOT() const;
-    bool supportsPVRTC() const;
-    bool supportsShareableVAO() const;
+    void dumpInfo() const = m1 0x46fa88, imac 0x519410, ios 0x32496c;
+    void gatherGPUInfo() = m1 0x46fb28, imac 0x519490, ios 0x3249f4;
+    bool getBool(char const*, bool) const = m1 0x470600, imac 0x519f10, ios 0x3250d4;
+    char const* getCString(char const*, char const*) const = m1 0x4704e4, imac 0x519df0, ios 0x325038;
+    int getMaxModelviewStackDepth() const = m1 0x4704ac, imac 0x519d80, ios inline;
+    int getMaxTextureSize() const = m1 0x4704a4, imac 0x519d70, ios 0x325018;
+    int getMaxTextureUnits() const = m1 0x4704b4, imac 0x519d90, ios inline;
+    double getNumber(char const*, double) const = m1 0x470740, imac 0x51a050, ios 0x325198;
+    cocos2d::CCObject* getObject(char const*) const = m1 0x4708b8, imac 0x51a1b0, ios inline;
+    bool init() = m1 0x46f72c, imac 0x5190b0, ios 0x324760;
+    void loadConfigFile(char const*) = m1 0x470abc, imac 0x51a380, ios inline;
+    void setObject(char const*, cocos2d::CCObject*) = m1 0x4709bc, imac 0x51a290, ios inline;
+    bool supportsBGRA8888() const = m1 0x4704cc, imac 0x519dc0, ios 0x325030;
+    bool supportsDiscardFramebuffer() const = m1 0x4704d4, imac 0x519dd0, ios inline;
+    bool supportsNPOT() const = m1 0x4704bc, imac 0x519da0, ios 0x325020;
+    bool supportsPVRTC() const = m1 0x4704c4, imac 0x519db0, ios 0x325028;
+    bool supportsShareableVAO() const = m1 0x4704dc, imac 0x519de0, ios inline;
 }
 
 [[link(win, android)]]
@@ -929,7 +929,7 @@ class cocos2d::CCDirector : cocos2d::CCObject, cocos2d::TypeInfo {
     // void setActualDeltaTime(float);
     void setAlphaBlending(bool);
     void setContentScaleFactor(float);
-    void setDefaultValues() = imac 0x482850, m1 0x3e8814;
+    void setDefaultValues() = ios 0x1751a4, imac 0x482850, m1 0x3e8814;
     void setDelegate(cocos2d::CCDirectorDelegate*);
     void setDeltaTime(float);
     void setDepthTest(bool) = imac 0x482ba0, m1 0x3e8ad4, ios 0x175454;
@@ -3368,7 +3368,7 @@ class cocos2d::CCPoolManager {
 
 [[link(win, android)]]
 class cocos2d::CCPrettyPrinter : cocos2d::CCDataVisitor {
-    CCPrettyPrinter(int) = win inline, imac 0x4b5120, m1 0x416360, ios 0x24e5cc;
+    CCPrettyPrinter(int) = win inline, imac 0x4b5230, m1 0x41649c, ios 0x24e5cc;
 
     virtual void clear() = imac 0x4b52d0, m1 0x416550, ios 0x24e6c0;
     virtual gd::string getResult() = imac 0x4b5300, m1 0x416574, ios 0x24e6e4;
