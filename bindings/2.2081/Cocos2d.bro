@@ -3693,31 +3693,31 @@ class cocos2d::CCScheduler : cocos2d::CCObject {
     // float getTimeScale();
     // void setTimeScale(float);
     // CCScheduler(cocos2d::CCScheduler const&);
-    CCScheduler();
-    virtual ~CCScheduler();
+    CCScheduler() = m1 0x3b35b0, imac 0x441f20, ios 0x1aa21c;
+    virtual ~CCScheduler() = m1 0x3b35ec, imac 0x441f70, ios 0x1aa258;
 
     virtual void update(float) = imac 0x443db0, m1 0x3b5480, ios 0x1abb2c;
 
-    void appendIn(cocos2d::_listEntry**, cocos2d::CCObject*, bool);
-    bool isTargetPaused(cocos2d::CCObject*);
-    cocos2d::CCSet* pauseAllTargets();
-    cocos2d::CCSet* pauseAllTargetsWithMinPriority(int);
+    void appendIn(cocos2d::_listEntry**, cocos2d::CCObject*, bool) = m1 0x3b4104, imac 0x442a50, ios 0x1aacc8;
+    bool isTargetPaused(cocos2d::CCObject*) = m1 0x3b50a8, imac 0x4439b0, ios inline;
+    cocos2d::CCSet* pauseAllTargets() = m1 0x3b52b4, imac 0x443be0, ios inline;
+    cocos2d::CCSet* pauseAllTargetsWithMinPriority(int) = m1 0x3b52bc, imac 0x443bf0, ios inline;
     void pauseTarget(cocos2d::CCObject*) = imac 0x443780, m1 0x3b4eb4, ios 0x1ab938;
-    void priorityIn(cocos2d::_listEntry**, cocos2d::CCObject*, int, bool);
-    void removeHashElement(cocos2d::_hashSelectorEntry*);
-    void removeUpdateFromHash(cocos2d::_listEntry*);
+    void priorityIn(cocos2d::_listEntry**, cocos2d::CCObject*, int, bool) = m1 0x3b3d64, imac 0x4426d0, ios 0x1aa944;
+    void removeHashElement(cocos2d::_hashSelectorEntry*) = m1 0x3b36c4, imac 0x442070, ios 0x1aa2bc;
+    void removeUpdateFromHash(cocos2d::_listEntry*) = m1 0x3b458c, imac 0x442ed0, ios 0x1ab12c;
     void resumeTarget(cocos2d::CCObject*) = imac 0x443550, m1 0x3b4cc8, ios 0x1ab74c;
-    void resumeTargets(cocos2d::CCSet*);
-    unsigned int scheduleScriptFunc(unsigned int, float, bool);
+    void resumeTargets(cocos2d::CCSet*) = m1 0x3b53ec, imac 0x443d20, ios inline;
+    unsigned int scheduleScriptFunc(unsigned int, float, bool) = m1 0x3b4c00, imac 0x4434b0, ios inline;
     void scheduleSelector(cocos2d::SEL_SCHEDULE, cocos2d::CCObject*, float, bool) = imac 0x442180, m1 0x3b37ec, ios 0x1aa3e4;
     void scheduleSelector(cocos2d::SEL_SCHEDULE, cocos2d::CCObject*, float, unsigned int, float, bool) = imac 0x4421a0, m1 0x3b37fc, ios 0x1aa3f4;
     void scheduleUpdateForTarget(cocos2d::CCObject*, int, bool) = imac 0x442d80, m1 0x3b4450, ios 0x1aaff8;
     void unscheduleAll() = imac 0x441fc0, m1 0x3b3630, ios 0x1aa29c;
     void unscheduleAllForTarget(cocos2d::CCObject*) = imac 0x443320, m1 0x3b4a5c, ios 0x1ab5a8;
-    void unscheduleAllWithMinPriority(int);
-    void unscheduleScriptEntry(unsigned int);
+    void unscheduleAllWithMinPriority(int) = m1 0x3b4970, imac 0x443230, ios 0x1ab4c8;
+    void unscheduleScriptEntry(unsigned int) = m1 0x3b4c6c, imac 0x443500, ios inline;
     void unscheduleSelector(cocos2d::SEL_SCHEDULE, cocos2d::CCObject*) = imac 0x441cb0, m1 0x3b3320, ios 0x1a9ffc;
-    void unscheduleUpdateForTarget(cocos2d::CCObject const*);
+    void unscheduleUpdateForTarget(cocos2d::CCObject const*) = m1 0x3b4844, imac 0x443110, ios 0x1ab39c;
 }
 
 [[link(win, android)]]
@@ -4507,20 +4507,20 @@ class cocos2d::CCTime {
 
 [[link(win, android)]]
 class cocos2d::CCTimer : cocos2d::CCObject {
-    CCTimer();
+    CCTimer() = m1 0x3b2eb0, imac 0x441850, ios inline;
 
-    static cocos2d::CCTimer* timerWithScriptHandler(int, float);
-    static cocos2d::CCTimer* timerWithTarget(cocos2d::CCObject*, cocos2d::SEL_SCHEDULE);
-    static cocos2d::CCTimer* timerWithTarget(cocos2d::CCObject*, cocos2d::SEL_SCHEDULE, float);
+    static cocos2d::CCTimer* timerWithScriptHandler(int, float) = m1 0x3b3068, imac 0x441a20, ios inline;
+    static cocos2d::CCTimer* timerWithTarget(cocos2d::CCObject*, cocos2d::SEL_SCHEDULE) = m1 0x3b2ef0, imac 0x4418a0, ios inline;
+    static cocos2d::CCTimer* timerWithTarget(cocos2d::CCObject*, cocos2d::SEL_SCHEDULE, float) = m1 0x3b2fc0, imac 0x441970, ios inline;
 
     virtual void update(float) = imac 0x441b00, m1 0x3b3134, ios 0x1a9e18;
 
-    float getInterval() const;
-    cocos2d::SEL_SCHEDULE getSelector() const;
-    bool initWithScriptHandler(int, float);
-    bool initWithTarget(cocos2d::CCObject*, cocos2d::SEL_SCHEDULE);
-    bool initWithTarget(cocos2d::CCObject*, cocos2d::SEL_SCHEDULE, float, unsigned int, float);
-    void setInterval(float);
+    float getInterval() const = m1 0x3b3558, imac 0x441ea0, ios inline;
+    cocos2d::SEL_SCHEDULE getSelector() const = m1 0x3b3568, imac 0x441ec0, ios inline;
+    bool initWithScriptHandler(int, float) = m1 0x3b30f0, imac 0x441ab0, ios inline;
+    bool initWithTarget(cocos2d::CCObject*, cocos2d::SEL_SCHEDULE) = m1 0x3b3108, imac 0x441ad0, ios inline;
+    bool initWithTarget(cocos2d::CCObject*, cocos2d::SEL_SCHEDULE, float, unsigned int, float) = m1 0x3b2f88, imac 0x441930, ios inline;
+    void setInterval(float) = m1 0x3b3560, imac 0x441eb0, ios inline;
 }
 
 [[link(win, android)]]
