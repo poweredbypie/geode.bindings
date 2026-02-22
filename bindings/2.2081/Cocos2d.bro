@@ -865,10 +865,10 @@ class cocos2d::CCDirector : cocos2d::CCObject, cocos2d::TypeInfo {
     virtual void setAccelerometer(cocos2d::CCAccelerometer*) = imac 0x484c20, m1 0x3ea7ac, ios 0x1767a8;
     virtual float getDeltaTime() = imac 0x483650, m1 0x3e9480, ios 0x1759ac;
 
-    void applySmoothFix();
-    void calculateDeltaTime() = imac 0x483160, m1 0x3e8fe4;
-    void calculateMPF() = imac 0x483550, m1 0x3e9388;
-    void checkSceneReference();
+    void applySmoothFix() = m1 0x3e93fc, imac 0x4835b0, ios inline;
+    void calculateDeltaTime() = ios inline, imac 0x483160, m1 0x3e8fe4;
+    void calculateMPF() = ios inline, imac 0x483550, m1 0x3e9388;
+    void checkSceneReference() = m1 0x3e9fe8, imac 0x484370, ios inline;
     cocos2d::CCPoint convertToGL(cocos2d::CCPoint const&) = imac 0x483dc0, m1 0x3e9b00, ios 0x175d80;
     cocos2d::CCPoint convertToUI(cocos2d::CCPoint const&) = imac 0x483ee0, m1 0x3e9bdc, ios inline;
     void createStatsLabel() = m1 0x3e9564, imac 0x483740, ios 0x175a64;
@@ -877,13 +877,13 @@ class cocos2d::CCDirector : cocos2d::CCObject, cocos2d::TypeInfo {
     // float getActualDeltaTime() const;
     // double getAnimationInterval();
     // float getContentScaleFactor();
-    cocos2d::CCDirectorDelegate* getDelegate() const;
+    cocos2d::CCDirectorDelegate* getDelegate() const = m1 0x3ea5e0, imac 0x484a20, ios inline;
     // bool getDontCallWillSwitch() const;
-    void getFPSImageData(unsigned char**, unsigned int*);
+    void getFPSImageData(unsigned char**, unsigned int*) = m1 0x3ea4cc, imac 0x4848d0, ios inline;
     // bool getIsTransitioning() const;
     // cocos2d::TextureQuality getLoadedTextureQuality() const;
     // cocos2d::CCScene* getNextScene();
-    cocos2d::CCNode* getNotificationNode() = imac 0x4849d0, m1 0x3ea594;
+    cocos2d::CCNode* getNotificationNode() = ios inline, imac 0x4849d0, m1 0x3ea594;
     // cocos2d::CCEGLView* getOpenGLView();
     // cocos2d::ccDirectorProjection getProjection();
     // cocos2d::CCScene* getRunningScene();
@@ -901,25 +901,25 @@ class cocos2d::CCDirector : cocos2d::CCObject, cocos2d::TypeInfo {
     cocos2d::CCSize getVisibleSize() = imac 0x484030, m1 0x3e9ccc, ios inline;
     cocos2d::CCSize getWinSize() = imac 0x483870, m1 0x3e9668, ios 0x175b68;
     cocos2d::CCSize getWinSizeInPixels() = imac 0x483ff0, m1 0x3e9cb0, ios 0x175e88;
-    float getZEye();
+    float getZEye() = m1 0x3e9a88, imac 0x483d30, ios inline;
     // bool isDisplayStats();
     // bool isNextDeltaTimeZero();
     // bool isPaused();
     // bool isSendCleanupToScene();
-    int levelForSceneInStack(cocos2d::CCScene*);
+    int levelForSceneInStack(cocos2d::CCScene*) = m1 0x3ea29c, imac 0x484650, ios inline;
     void pause() = imac 0x484840, m1 0x3ea43c, ios 0x176488;
     void popScene() = imac 0x4843b0, m1 0x3ea024, ios 0x1760e8;
     bool popSceneWithTransition(float, cocos2d::PopTransition) = imac 0x484440, m1 0x3ea0b0, ios 0x17616c;
     void popToRootScene() = imac 0x484520, m1 0x3ea180, ios 0x17623c;
     void popToSceneInStack(cocos2d::CCScene*) = imac 0x4846a0, m1 0x3ea2e8, ios 0x176334;
     void popToSceneStackLevel(int) = imac 0x484530, m1 0x3ea188, ios 0x176244;
-    void purgeCachedData();
+    void purgeCachedData() = m1 0x3e9aa0, imac 0x483d50, ios 0x175d7c;
     void purgeDirector() = imac 0x484700, m1 0x3ea338, ios 0x176384;
     bool pushScene(cocos2d::CCScene*) = imac 0x4841a0, m1 0x3e9e18, ios 0x175f28;
-    void removeStatsLabel() = imac 0x484900, m1 0x3ea4fc;
+    void removeStatsLabel() = ios 0x176518, imac 0x484900, m1 0x3ea4fc;
     bool replaceScene(cocos2d::CCScene*) = imac 0x484250, m1 0x3e9ec4, ios 0x175fd4;
     void resetSmoothFixCounter() = imac 0x483640, m1 0x3e9474, ios 0x1759a0;
-    void reshapeProjection(cocos2d::CCSize const&);
+    void reshapeProjection(cocos2d::CCSize const&) = m1 0x3e9aa4, imac 0x483d60, ios inline;
     void resume() = imac 0x484880, m1 0x3ea480, ios 0x1764cc;
     void runWithScene(cocos2d::CCScene*) = imac 0x484100, m1 0x3e9d6c, ios 0x175efc;
     int sceneCount() = imac 0x484630, m1 0x3ea294, ios 0x17632c;
@@ -927,27 +927,27 @@ class cocos2d::CCDirector : cocos2d::CCObject, cocos2d::TypeInfo {
     //getScreenBottom() = ios 0x182614
     //getScreenLeft() = ios 0x18261C
     // void setActualDeltaTime(float);
-    void setAlphaBlending(bool);
-    void setContentScaleFactor(float);
+    void setAlphaBlending(bool) = m1 0x3e8ac0, imac 0x482b80, ios inline;
+    void setContentScaleFactor(float) = m1 0x3e9a18, imac 0x483cb0, ios 0x175d14;
     void setDefaultValues() = ios 0x1751a4, imac 0x482850, m1 0x3e8814;
-    void setDelegate(cocos2d::CCDirectorDelegate*);
-    void setDeltaTime(float);
+    void setDelegate(cocos2d::CCDirectorDelegate*) = m1 0x3ea5e8, imac 0x484a30, ios inline;
+    void setDeltaTime(float) = m1 0x3e93f4, imac 0x4835a0, ios 0x175998;
     void setDepthTest(bool) = imac 0x482ba0, m1 0x3e8ad4, ios 0x175454;
     // void setDisplayStats(bool);
     // void setDontCallWillSwitch(bool);
     void setGLDefaultValues() = imac 0x482b30, m1 0x3e8a74, ios 0x175408;
-    void setNextDeltaTimeZero(bool);
+    void setNextDeltaTimeZero(bool) = m1 0x3e9a80, imac 0x483d20, ios inline;
     void setNextScene() = imac 0x483290, m1 0x3e9110, ios 0x175730;
     // void setNotificationNode(cocos2d::CCNode*) = imac 0x4849e0, m1 0x3ea59c;
-    void setOpenGLView(cocos2d::CCEGLView*);
+    void setOpenGLView(cocos2d::CCEGLView*) = m1 0x3e9488, imac 0x483660, ios 0x1759b4;
     void setProjection(cocos2d::ccDirectorProjection) = imac 0x482be0, m1 0x3e8b04, ios 0x175484;
     void setupScreenScale(cocos2d::CCSize, cocos2d::CCSize, cocos2d::TextureQuality) = m1 0x3e9674, imac 0x483890, ios 0x175b74;
     // void setSceneReference(cocos2d::CCScene*);
     // void setSmoothFix(bool);
     // void setSmoothFixCheck(bool);
     void setViewport() = imac 0x483cd0, m1 0x3e9a2c, ios 0x175d28;
-    void showFPSLabel() = imac 0x483470, m1 0x3e92d4;
-    void showStats() = imac 0x4833c0, m1 0x3e9230;
+    void showFPSLabel() = ios 0x1758e4, imac 0x483470, m1 0x3e92d4;
+    void showStats() = ios 0x175848, imac 0x4833c0, m1 0x3e9230;
     void toggleShowFPS(bool, gd::string, cocos2d::CCPoint) = imac 0x483750, m1 0x3e9568, ios 0x175a68;
     void updateContentScale(cocos2d::TextureQuality) = imac 0x483b70, m1 0x3e9914, ios 0x175c84;
     void updateScreenScale(cocos2d::CCSize) = m1 0x3e9864, imac 0x483aa0, ios 0x175bd4;
@@ -3368,7 +3368,7 @@ class cocos2d::CCPoolManager {
 
 [[link(win, android)]]
 class cocos2d::CCPrettyPrinter : cocos2d::CCDataVisitor {
-    CCPrettyPrinter(int) = win inline, imac 0x4b5230, m1 0x41649c, ios 0x24e5cc;
+    CCPrettyPrinter(int) = win inline, imac 0x4b5120, m1 0x416360, ios 0x24e5cc;
 
     virtual void clear() = imac 0x4b52d0, m1 0x416550, ios 0x24e6c0;
     virtual gd::string getResult() = imac 0x4b5300, m1 0x416574, ios 0x24e6e4;
